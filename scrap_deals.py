@@ -80,6 +80,12 @@ def check_state(deal):
 def add_hash(deal):
     deal = deal.replace("Nintendo","#Nintendo")
     deal = deal.replace("Switch","#Switch")
+    deal = deal.replace("PS4","#PS4")
+    deal = deal.replace("PS3","#PS3")
+    deal = deal.replace("Xbox","#Xbox")
+    deal = deal.replace("Steam","#Steam")
+    deal = deal.replace("PC","#PC")
+    deal = deal.replace("PSN","#PSN")
     deal = deal + " #GameDeal"
     return deal
 
