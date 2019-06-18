@@ -78,7 +78,9 @@ def check_state(deal):
         pass
 
 def add_hash(deal):
-    deal = deal + "#GameDeal"
+    deal = deal.replace("Nintendo","#Nintendo")
+    deal = deal.replace("Switch","#Switch")
+    deal = deal + " #GameDeal"
     return deal
 
 
