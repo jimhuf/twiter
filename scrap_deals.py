@@ -63,12 +63,12 @@ def update_deals(dict_connections):
 
 def check_state(deal):
     try:
-
-        tt = (json.dumps(open('state_deals.json').read())).replace(r"\\u00c2\\u00a","£")
-        tt = tt.replace(r"\\u00a3","£")
-        tt = tt.replace(r'u2018','')
-        tt = tt.replace(r'u2019','')
-        tt = tt.replace("\\\\", '')
+        tmp = open('state_deals.json').read()
+        tt = tmp.replace(u"\\u00c2","").replace(u"\\u00a0","")
+        tt = tt.replace(u"\\u00a","")
+        tt = tt.replace(u"\\u00a3","£")
+        tt = tt.replace(u'\\u2018','')
+        tt = tt.replace(u'\\u2019','')
         deal = deal.replace(u'\xa0','')
         if deal in tt:
             return True
