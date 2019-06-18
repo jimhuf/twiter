@@ -77,6 +77,12 @@ def check_state(deal):
     except FileNotFoundError:
         pass
 
+def add_hash(deal):
+    deal = deal + "#GameDeal"
+    return deal
+
+
+
 if __name__ == '__main__':
     URL = 'gaming-new'
     #content = requests.get(URL)
@@ -96,6 +102,7 @@ if __name__ == '__main__':
             tmp_dict = {"deal": deal,"url":url}
             if not('hotukdeals') in url:
                 if not(check_state(deal)):
+                    deal = add_hash(deal)
                     tweet = f'{deal}({url})'
                     if img[0].has_attr('src'):
                         to_download = img[0]['src']
